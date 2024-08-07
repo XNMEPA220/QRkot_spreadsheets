@@ -25,7 +25,7 @@ async def check_project_exists(
 async def check_project_is_closed(
         project: CharityProject
 ) -> None:
-    """ Проверка закрытого проекта."""
+    """Проверка закрытого проекта."""
     if project.fully_invested:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
@@ -52,7 +52,7 @@ async def check_update_amount_lower_invested(
 async def check_invested_before_delete_project(
         project: CharityProject
 ) -> None:
-    """ Проверка, что в проект были внесены инвестиции."""
+    """Проверка, что в проект были внесены инвестиции."""
     if project.invested_amount:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
